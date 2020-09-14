@@ -14,20 +14,32 @@ import java.util.Scanner;
  *
  * @author diegomatute
  */
-public class Main { public static void main(String args[]) throws FileNotFoundException
+public class Main { 
+    public static void main(String args[]) throws FileNotFoundException
 {
-    String inFile = "inputFile.txt";
+    //System.out.printf("Hello world\n");
     String outFile;
     
-    Scanner input = new Scanner(System.in);
-    System.out.print(inFile);
-    System.out.printf("Enter input file name: ");
-    inFile = input.nextLine(); //.trim();
-    System.out.print(inFile);
-    //Scanner inputScanner;
-    //inputScanner = new Scanner(new FileReader(filename));
     
-   // FileReader fr = new FileReader(filename);
+    //Scanner for user input 
+    Scanner input = new Scanner(System.in);
+    String filename; //"inputFile.txt";
+   
+    //User names input file
+    //Prepare the input file
+    System.out.printf("Enter input file name: \n");
+    filename = input.nextLine(); //.trim();
+    
+    FileReader fr = new FileReader(filename);
+    Scanner infile = new Scanner(fr);
+    System.out.print(filename);
+    
+    /* Scanner inputScanner;
+    inputScanner = new Scanner(new FileReader(filename));
+    */
+
+    
+ 
     //Scanner infile = new Scanner(fr);
     //File input = new File(inFile);
     
