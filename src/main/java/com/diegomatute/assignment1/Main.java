@@ -18,6 +18,8 @@ public class Main {
     public static void main(String args[]) throws FileNotFoundException
 {
     //System.out.printf("Hello world\n");
+    String fName;
+    String lName;
     String outFile;
     
     
@@ -29,28 +31,66 @@ public class Main {
     //Prepare the input file
     System.out.printf("Enter input file name: \n");
     filename = input.nextLine(); //.trim();
+    System.out.printf(filename);
     
+    //Read from file
     FileReader fr = new FileReader(filename);
     Scanner infile = new Scanner(fr);
-    System.out.print(filename);
+    //System.out.print(filename);
     
     /* Scanner inputScanner;
     inputScanner = new Scanner(new FileReader(filename));
     */
 
+    fName = infile.nextLine();
+    System.out.printf(fName);
     
- 
+    lName = infile.nextLine();
+    System.out.printf(lName);
     //Scanner infile = new Scanner(fr);
     //File input = new File(inFile);
     
+    //outfile
+    String outfile;
+    System.out.printf("Enter out file name: \n");
+    outfile = input.nextLine();
+    System.out.printf(outfile);
+    PrintStream output = new PrintStream(outfile);
+    //out.println(fName); 
     
-    
-    
-    
-    
-    
+     //outfile.printf("result = %d\n", result);
+     
+    /*
+FirstName
+LastName
+Id
+Payrate
+ShiftCount
+Month
+Day
+Year
+HoursWorked
+Month
+Day
+Year
+HoursWorked
+
+    */
 }
-    
-    
-    
 }
+
+//Writes to a file from main
+
+   /* PrintStream ps = null;
+    
+    try
+    {
+        ps = new PrintStream(filename);
+    }
+    catch (Exception e)
+    {
+        System.out.println("Error could not open file \n");
+    }
+    
+    ps.println("Hello, Diego \n");
+    */

@@ -5,7 +5,7 @@ Payrate
 ShiftCount
 Month
 Day
-Year
+Year 
 HoursWorked
 Month
 Day
