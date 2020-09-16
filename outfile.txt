@@ -1,8 +1,8 @@
 Payroll Report
----------------
+--------------
 First: Rose 
 Last: Diaz
-Id:   1
+Id: 1
 Pay Rate: 20.00
  
    Month      Day     Year     Hours Worked       Pay

@@ -1,0 +1,46 @@
+/Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home/bin/javadoc
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/diegomatute/NetBeansProjects/Assignment1/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2020. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Assignment1 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' '/Users/diegomatute/NetBeansProjects/Assignment1/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Assignment1 1.0-SNAPSHOT API'
+com.diegomatute.assignment1
+/Users/diegomatute/NetBeansProjects/Assignment1/src/main/java = 1600030303175
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/constant-values.html = 1600225173206
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/member-search-index.zip = 1600225173233
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/overview-tree.html = 1600225173217
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/index.html = 1600225173255
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/package-search-index.js = 1600225173221
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/package-search-index.zip = 1600225173232
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/type-search-index.zip = 1600225173232
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/index-all.html = 1600225173234
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/allpackages-index.html = 1600225173239
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/deprecated-list.html = 1600225173252
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/member-search-index.js = 1600225173233
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/allclasses.html = 1600225173254
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/script.js = 1600225173265
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/stylesheet.css = 1600225173263
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/help-doc.html = 1600225173259
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/element-list = 1600225173192
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/allclasses-index.html = 1600225173237
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/type-search-index.js = 1600225173232
+/Users/diegomatute/NetBeansProjects/Assignment1/target/site/apidocs/search.js = 1600225173266

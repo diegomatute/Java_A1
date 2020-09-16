@@ -11,83 +11,84 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
+ * Contains main program code. This class generates a report of
+ * a worker's pay.
  *
- * @author diegomatute
+ * @author Diego Matute
+ * @version 1.0
+ * @since 9/8/2020
+ * 
  */
 public class Main { 
+    /**
+     * This method reads in data from a file and outputs data to a new file.
+     * 
+     * @param args Contains the supplied command-line arguments as an
+     * array of string.
+     * @throws FileNotFoundException  Throws an exception FileNotFoundException.
+     */
     public static void main(String args[]) throws FileNotFoundException
 {
-    //System.out.printf("Hello world\n");
-    String fName;
-    String lName;
+    
+    String fName, lName, outfile;
+    
     int id, shiftCount, month, day, year;
-    double payRate, hoursWorked;
-    String outfile;
-    double pay; // hours worked * pay rate 
+    
+    double payRate, hoursWorked, pay;
+
     
     
     
     //Scanner for user input 
     Scanner input = new Scanner(System.in);
-    String filename; //"inputFile.txt";
+    String filename; 
    
-    //User names input file
     //Prepare the input file
     System.out.printf("Enter input file name: \n");
-    filename = input.nextLine(); //.trim();
-    //System.out.printf(filename);
+    //Users input is now "filename" string
+    filename = input.nextLine(); 
     
-    //outfile
+    
+    //Prepare output file
     System.out.printf("Enter output file name: \n");
     outfile = input.nextLine();
-    //System.out.printf(outfile);
-    PrintStream output = new PrintStream(outfile);
-    //out.println(fName); 
     
-    //outfile.printf("result = %d\n", result);
+    
+    //******************************************************
+    //PrintStream enables data to be written to 
+    // a new file. 
+    //******************************************************
+    PrintStream output = new PrintStream(outfile);
+     
+    
+    
     
     //Read from file
     FileReader fr = new FileReader(filename);
+    //Obtains data from a file
     Scanner infile = new Scanner(fr);
-    //System.out.print(filename);
     
-    //Read data from input file 
-    //Before loop
+    
+    //Reads data from input file 
+    
     fName = infile.nextLine();
-    //System.out.printf(fName);
+    
     
     lName = infile.nextLine();
-    //System.out.printf(lName);
-    //Scanner infile = new Scanner(fr);
-    //File input = new File(inFile);
+    
     
     id = infile.nextInt();
+    
     payRate = infile.nextDouble();
     
- 
-    //During loop 
     shiftCount = infile.nextInt();
-   /* 
-    for(int i =0; i<shiftCount; i++)
-    {
-        
-        month = infile.nextInt();
-        day = infile.nextInt();
-        year = infile.nextInt();
-        //System.out.printf("%d\n", year);
-        hoursWorked = infile.nextDouble();
-        //System.out.printf("%f\n", hoursWorked);
-        pay = hoursWorked * payRate; 
-        output.printf("%10d %10d %6d %18f %6f", month, day, year, hoursWorked, pay);
-        
-        i++;
-    }
-    */
+ 
     
-    //output to a file
+    //Outputs to a file
+    
     output.println("Payroll Report");
     
-    output.println("---------------");
+    output.println("--------------");
     
     //Prints First: Rose
     output.printf("First: %4s\n", fName);
@@ -95,65 +96,66 @@ public class Main {
     //Prints Last: Diaz
     output.printf("Last: %4s\n", lName);
     
-    output.printf("Id: %3d\n", id);
+    //Prints Id: 1
+    output.printf("Id: %1d\n", id);
     
+    //Prints Pay Rate: 20.00
     output.printf("Pay Rate: %4.2f\n", payRate);
-    //outfile.printf("result = %d\n", result);
     
     //Prints empty line
     output.println(" ");
     
+    //Prints Header
+    output.printf("%8s %8s %8s %16s %10s", "Month", "Day", "Year", 
+            "Hours Worked", "Pay\n");
     
-    output.printf("%8s %8s %8s %16s %10s", "Month", "Day", "Year", "Hours Worked", "Pay\n");
-    
-    output.printf("%8s %8s %8s %16s %11s", "-----", "---", "----", "------------", "--- \n");
-    
+    output.printf("%8s %8s %8s %16s %11s", "-----", "---", "----", 
+            "------------", "--- \n");
     
     
-   double sumHrs = 0, sumPay = 0;
+    //During loop 
+   
+    //Global variables sumHrs and sumPay
+    double sumHrs = 0, sumPay = 0;
+    
+    //*********************************************************
+    // For loop processes one record at a time from the file  
+    // as long as integer i is less than or equal to the 
+    // number of shifts (shiftCount)+2. Double "pay" is then
+    // calculated by multiplying hoursWorked by payRate. 
+    // Doubles hoursWorked and totalPay are continuously added
+    // The data stored is then displayed on the outfile in 
+    // column form.
+    // 
+    //*********************************************************
     for(int i =0; i <= shiftCount+2; i++)
     {
         
         month = infile.nextInt();
+        
         day = infile.nextInt();
+        
         year = infile.nextInt();
-        //System.out.printf("%d\n", year);
+        
         hoursWorked = infile.nextDouble();
-        //System.out.printf("%f\n", hoursWorked);
+
         pay = hoursWorked * payRate; 
          sumHrs += hoursWorked;
          sumPay += pay;
        
-        output.printf("%8d %8d %8d %16.2f %10.2f\n", month, day, year, hoursWorked, pay);
+        output.printf("%8d %8d %8d %16.2f %10.2f\n", month, day, year,
+                hoursWorked, pay);
         i++;
         
         
     }
     
-    output.printf("%8s %8s %8s %16s %12s", "-----", "---", "----", "------------", "-------- \n");
+    output.printf("%8s %8s %8s %16s %12s", "-----", "---", "----", 
+            "------------", "-------- \n");
     
-
-  
-         output.printf("%8s %34.2f %10.2f", "Total", sumHrs, sumPay);
+    //Prints final line of report.
+    output.printf("%8s %34.2f %10.2f", "Total", sumHrs, sumPay);
  
     
-    //output.printf("%8s %30f %10f", "Total" );
-    
 }
 }
-
-//Rewrites contents from a file from main
-
-   /* PrintStream ps = null;
-    
-    try
-    {
-        ps = new PrintStream(filename);
-    }
-    catch (Exception e)
-    {
-        System.out.println("Error could not open file \n");
-    }
-    
-    ps.println("Hello, Diego \n");
-    */
